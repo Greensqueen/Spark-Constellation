@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spark Constellation</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="workspace" aria-label="Spark Constellation app">
+        <aside class="panel">
+          <div class="brand">
+            <span class="brand-mark" aria-hidden="true">✦</span>
+            <div>
+              <h1>Spark Constellation</h1>
+              <p>Turn your background into playful GitHub project ideas.</p>
+            </div>
+          </div>
+
+          <form id="profileForm" class="profile-form">
+            <label>
+              Skills
+              <textarea id="skills" rows="4" placeholder="frontend, writing, design, data analysis"></textarea>
+            </label>
+            <label>
+              Interests
+              <textarea id="interests" rows="4" placeholder="music, productivity, travel, language learning"></textarea>
+            </label>
+            <label>
+              Goals
+              <textarea id="goals" rows="3" placeholder="portfolio, internship, side business, creative coding"></textarea>
+            </label>
+
+            <div class="controls">
+              <button type="submit" class="primary">Generate</button>
+              <button type="button" id="randomize">Shuffle</button>
+              <button type="button" id="clear">Clear</button>
+            </div>
+          </form>
+        </aside>
+
+        <section class="stage">
+          <div class="topbar">
+            <div>
+              <p class="eyebrow">Live Map</p>
+              <h2 id="constellationTitle">Your constellation is waiting</h2>
+            </div>
+            <button id="exportBrief" type="button">Export Brief</button>
+          </div>
+
+          <canvas id="starfield" width="900" height="560" aria-label="Animated project constellation"></canvas>
+
+          <section class="ideas" aria-label="Generated project ideas">
+            <article class="idea-card is-empty">
+              <h3>Add your background</h3>
+              <p>Generate a few ideas, then click a star to focus one.</p>
+            </article>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <dialog id="briefDialog">
+      <form method="dialog">
+        <div class="dialog-head">
+          <h2>GitHub Brief</h2>
+          <button aria-label="Close">×</button>
+        </div>
+        <textarea id="briefOutput" rows="16" readonly></textarea>
+      </form>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
